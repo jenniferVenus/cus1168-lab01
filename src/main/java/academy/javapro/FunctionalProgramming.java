@@ -18,17 +18,24 @@ public class FunctionalProgramming {
 
         System.out.println("Even numbers: " + evenNumbers);
 
-        // TASK 2: Now it's your turn!
+         // TASK 2: Now it's your turn!
         // TODO: Create a stream that doubles each number in the original list
         // Hint: Use .map(n -> ...)
         List<Integer> doubledNumbers = numbers.stream()
             // Write your code here
+            //Start of code
+            .map(n -> n * 2)
+            //End of code
             .collect(Collectors.toList());
-
+    
         // TASK 3: Sum all numbers in doubledNumbers
         // TODO: Create a stream that sums all numbers
         // Hint: Use .mapToInt(n -> n).sum()
-        int sum = 0; // Replace with your stream code
+
+        //Start of code
+        int sum = doubledNumbers.stream()
+        .mapToInt(n -> n).sum();
+        //End of code
 
         // Print results
         System.out.println("Doubled numbers: " + doubledNumbers);
